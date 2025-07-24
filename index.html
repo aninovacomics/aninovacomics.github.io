@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мне дали 0 характеристик, я дал 3,14зды | Читать мангу онлайн</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Мне дали 0 характеристик, я дал 3,14зды</h1>
+        </header>
+        
+        <main>
+            <div class="manga-info">
+                <div class="cover-container">
+                    <img src="images/cover.jpg" alt="Обложка манги" class="cover">
+                </div>
+                
+                <div class="details">
+                    <div class="meta">
+                        <p><strong>Тип:</strong> комикс</p>
+                        <p><strong>Выпуск:</strong> 2025</p>
+                        <p><strong>Глав:</strong> 1</p>
+                        <p><strong>Статус:</strong> Выходит</p>
+                        <p><strong>Автор:</strong> AniNova</p>
+                        <p><strong>Художник:</strong> BigBroo, Staryy</p>
+                    </div>
+                    
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="description">Описание</button>
+                        <button class="tab-btn" data-tab="chapters">Главы</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="description">
+                        <h2>Описание</h2>
+                        <p>Главный герой, обычный студент, неожиданно попадает в параллельный мир, где у всех есть уникальные характеристики и способности. Однако при проверке его характеристик система выдаёт ошибку - все значения равны нулю!</p>
+                        <p>Но наш герой не растерялся и решил дать системе свой ответ - 3,14зды! С этого момента начинается его невероятное приключение в мире, где правила пишутся на ходу, а логика остаётся за кадром.</p>
+                    </div>
+                    
+                    <div class="tab-content" id="chapters">
+                        <h2>Доступные главы</h2>
+                        <div class="chapter-list">
+                            <a href="#" class="chapter-item" data-chapter="1">Глава 1</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reader-container hidden">
+                <div class="reader-header">
+                    <button class="back-btn">← Назад</button>
+                    <h2 class="chapter-title">Глава 1</h2>
+                </div>
+                <div class="manga-reader" id="manga-reader">
+                    <!-- Страницы манги будут загружаться здесь -->
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

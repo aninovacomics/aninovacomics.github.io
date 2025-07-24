@@ -1,0 +1,233 @@
+:root {
+    --primary-color: #4a6fa5;
+    --secondary-color: #166088;
+    --background-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #2d3436;
+    --light-text: #636e72;
+    --white: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.manga-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.cover-container {
+    text-align: center;
+}
+
+.cover {
+    max-width: 300px;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.details {
+    flex: 1;
+}
+
+.meta {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(74, 111, 165, 0.1);
+    border-radius: var(--border-radius);
+}
+
+.meta p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.meta p strong {
+    min-width: 100px;
+    display: inline-block;
+    color: var(--primary-color);
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--light-text);
+    position: relative;
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.chapter-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.chapter-item {
+    padding: 15px;
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: all 0.2s ease;
+}
+
+.chapter-item:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.reader-container {
+    display: none;
+    background-color: var(--white);
+    padding: 20px 0;
+    border-radius: var(--border-radius);
+}
+
+.reader-container.active {
+    display: block;
+}
+
+.reader-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    z-index: 10;
+}
+
+.back-btn {
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.back-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.chapter-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.manga-reader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.manga-page {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .manga-info {
+        flex-direction: row;
+    }
+    
+    .cover {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chapter-list {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .reader-header {
+        padding: 0 15px 15px;
+    }
+}
