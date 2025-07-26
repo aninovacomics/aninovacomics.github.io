@@ -1,13 +1,10 @@
 :root {
-    --primary-color: #4a6fa5;
-    --secondary-color: #166088;
-    --background-color: #f8f9fa;
-    --card-bg: #ffffff;
-    --text-color: #2d3436;
-    --light-text: #636e72;
-    --white: #fff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --border-radius: 8px;
+    --bg: #000;
+    --fg: #fff;
+    --accent: #ccc;
+    --dim: #666;
+    --highlight: #fff;
+    --radius: 10px;
 }
 
 * {
@@ -18,13 +15,13 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--bg);
+    color: var(--fg);
     line-height: 1.6;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -36,18 +33,24 @@ header {
 
 header h1 {
     font-size: 2.5rem;
-    color: var(--primary-color);
-    font-weight: 700;
+    font-weight: bold;
+    color: var(--highlight);
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--dim);
+    margin-top: 5px;
+    font-style: italic;
 }
 
 .manga-info {
+    background: #111;
+    border-radius: var(--radius);
     display: flex;
     flex-direction: column;
     gap: 30px;
-    background-color: var(--card-bg);
     padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
 }
 
 .cover-container {
@@ -56,9 +59,8 @@ header h1 {
 
 .cover {
     max-width: 300px;
-    height: auto;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .details {
@@ -66,26 +68,27 @@ header h1 {
 }
 
 .meta {
-    margin-bottom: 20px;
     padding: 15px;
-    background-color: rgba(74, 111, 165, 0.1);
-    border-radius: var(--border-radius);
+    background-color: #1a1a1a;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
 }
 
 .meta p {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 0.95rem;
+    color: var(--accent);
 }
 
 .meta p strong {
-    min-width: 100px;
     display: inline-block;
-    color: var(--primary-color);
+    width: 100px;
+    color: var(--highlight);
 }
 
 .tabs {
     display: flex;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--dim);
     margin-bottom: 20px;
 }
 
@@ -93,29 +96,16 @@ header h1 {
     padding: 10px 20px;
     background: none;
     border: none;
+    color: var(--accent);
     cursor: pointer;
     font-size: 1rem;
-    color: var(--light-text);
-    position: relative;
-}
-
-.tab-btn:hover {
-    color: var(--primary-color);
+    transition: 0.2s;
 }
 
 .tab-btn.active {
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-.tab-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--primary-color);
+    color: var(--highlight);
+    font-weight: bold;
+    border-bottom: 2px solid var(--highlight);
 }
 
 .tab-content {
@@ -126,33 +116,46 @@ header h1 {
     display: block;
 }
 
+.tags {
+    margin-top: 20px;
+}
+
+.tags span {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: #222;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    color: var(--accent);
+}
+
 .chapter-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
 .chapter-item {
-    padding: 15px;
-    background-color: var(--white);
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius);
-    text-align: center;
+    background: #222;
+    color: var(--fg);
     text-decoration: none;
-    color: var(--primary-color);
-    transition: all 0.2s ease;
+    padding: 10px 15px;
+    border-radius: var(--radius);
+    transition: background 0.2s;
 }
 
 .chapter-item:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background: var(--fg);
+    color: var(--bg);
 }
 
 .reader-container {
     display: none;
-    background-color: var(--white);
-    padding: 20px 0;
-    border-radius: var(--border-radius);
+    background: #111;
+    padding: 20px;
+    border-radius: var(--radius);
 }
 
 .reader-container.active {
@@ -163,31 +166,21 @@ header h1 {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    padding: 0 20px 20px;
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    background-color: var(--white);
-    z-index: 10;
 }
 
 .back-btn {
-    padding: 8px 15px;
-    background-color: var(--primary-color);
-    color: var(--white);
+    background: var(--fg);
+    color: var(--bg);
     border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: var(--radius);
     margin-right: 20px;
-}
-
-.back-btn:hover {
-    background-color: var(--secondary-color);
+    cursor: pointer;
 }
 
 .chapter-title {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: var(--highlight);
 }
 
 .manga-reader {
@@ -198,10 +191,7 @@ header h1 {
 
 .manga-page {
     max-width: 100%;
-    width: auto;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .hidden {
@@ -212,22 +202,8 @@ header h1 {
     .manga-info {
         flex-direction: row;
     }
-    
+
     .cover {
         max-width: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .chapter-list {
-        grid-template-columns: 1fr;
-    }
-    
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    .reader-header {
-        padding: 0 15px 15px;
     }
 }
