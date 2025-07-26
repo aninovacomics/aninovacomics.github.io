@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mangaInfo.classList.add('hidden');
         
         // Загрузка страниц
-        const pageCount = 18;
+        const pageCount = 26;
         
         for (let i = 1; i <= pageCount; i++) {
             const img = document.createElement('img');
