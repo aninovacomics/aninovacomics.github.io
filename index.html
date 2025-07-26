@@ -29,36 +29,41 @@
     <div class="container">
         <header>
             <h1>Мне дали 0 характеристик, я дал 3,14зды</h1>
+            <p class="subtitle">Given Zero Stats, I Gave Them Hell</p>
         </header>
-        
+
         <main>
             <div class="manga-info">
                 <div class="cover-container">
-                    <img src="images/cover.jpg" alt="Обложка манги" class="cover">
+                    <img src="images/cover.jpg" alt="Обложка манги" class="cover"/>
                 </div>
-                
+
                 <div class="details">
                     <div class="meta">
-                        <p><strong>Возрастной рейтинг:</strong> 18+</p>
                         <p><strong>Тип:</strong> комикс</p>
-                        <p><strong>Жанр:</strong> пародия, трагикомедия, исекай</p>
                         <p><strong>Выпуск:</strong> 2025</p>
                         <p><strong>Глав:</strong> 1</p>
                         <p><strong>Статус:</strong> Выходит</p>
                         <p><strong>Автор:</strong> AniNova</p>
                     </div>
-                    
+
                     <div class="tabs">
                         <button class="tab-btn active" data-tab="description">Описание</button>
                         <button class="tab-btn" data-tab="chapters">Главы</button>
                     </div>
-                    
+
                     <div class="tab-content active" id="description">
                         <h2>Описание</h2>
                         <p>Обычный парень Сэрогами хотел лишь купить пива, но судьба приготовила ему нечто большее. Мир, где у всех есть силы, способности и четкие правила… Но только не у него. Когда система выдаёт ему нули, он отвечает ей по-своему — жёстко.</p>
                         <p>Отвергнутый богами, осмеянный и брошенный в чуждый мир, он не ищет величия. Ему нужно лишь одно — своё пиво. Но когда герои этого мира оказываются хуже монстров, кто-то же должен навести порядок?</p>
+
+                        <div class="tags">
+                            <span>#исекай</span>
+                            <span>#пародия</span>
+                            <span>#трагикомедия</span>
+                        </div>
                     </div>
-                    
+
                     <div class="tab-content" id="chapters">
                         <h2>Доступные главы</h2>
                         <div class="chapter-list">
@@ -67,19 +72,17 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="reader-container hidden">
                 <div class="reader-header">
                     <button class="back-btn">← Назад</button>
                     <h2 class="chapter-title">Глава 1</h2>
                 </div>
-                <div class="manga-reader" id="manga-reader">
-                    <!-- Страницы манги будут загружаться здесь -->
-                </div>
+                <div class="manga-reader" id="manga-reader"></div>
             </div>
         </main>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
