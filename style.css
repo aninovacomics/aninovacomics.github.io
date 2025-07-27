@@ -193,12 +193,12 @@ header h1 {
 }
 
 .manga-page {
-    width: 100vw; /* ширина по всей ширине окна браузера */
+    width: 100vw; /* ширина по всей ширине окна */
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0; /* убираем отступы */
-    margin-bottom: 0px;
+    margin: 0;
+    margin-bottom: 0;
     padding: 0;
 }
 
@@ -214,4 +214,10 @@ header h1 {
     .cover {
         max-width: 250px;
     }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
